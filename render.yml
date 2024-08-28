@@ -5,7 +5,8 @@ services:
     buildCommand: |
       sudo apt-get update
       sudo apt-get install -y build-essential g++ libopencv-dev
+      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
       g++ -o seam_carving seam_carving.cpp `pkg-config --cflags --libs opencv4`
     startCommand: ./seam_carving
-    port: 3000  # Use this if your app listens on a port
+    port: 8080
 
