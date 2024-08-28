@@ -1,12 +1,10 @@
 services:
   - type: web
-    name: my-cpp-app
-    env: static
-    buildCommand: |
-      sudo apt-get update
-      sudo apt-get install -y build-essential g++ libopencv-dev
-      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-      g++ -o seam_carving seam_carving.cpp `pkg-config --cflags --libs opencv4`
-    startCommand: ./seam_carving
+    name: seam-carving-app
+    env: docker
+    buildCommand: ""
+    startCommand: "./seam_carving"
+    dockerfilePath: Dockerfile
     port: 8080
+    autoDeploy: true
 
