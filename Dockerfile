@@ -32,7 +32,7 @@ EXPOSE 8080
 
 # Copy and set up the start script
 COPY start.sh /app/
-RUN chmod +x /app/start.sh
+RUN chmod +x /app/build.sh
 
 # Run the start script
-CMD ["/app/start.sh"]
+CMD ["/app/build.sh"]
