@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 // Handle the image upload and run the seam carving process
 app.post('/upload', upload.single('image'), (req, res) => {
     const inputImagePath = req.file.path;
-    const outputImagePath = path.join(OUTPUT_FOLDER, 'output.jpg');
+    const outputImagePath = path.join('output.jpg');
     
     const height = req.body.height;
     const width = req.body.width;
