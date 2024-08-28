@@ -1,1 +1,0 @@
-# seam_carving

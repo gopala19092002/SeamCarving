@@ -1,0 +1,31 @@
+{
+  "name": "seam_carving",
+  "version": "1.0.0",
+  "description": "A Node.js application for seam carving image processing.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karunsehwag/seam_carving.git"
+  },
+  "keywords": [
+    "seam-carving",
+    "image-processing",
+    "nodejs"
+  ],
+  "author": "Karun Sehwag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karunsehwag/seam_carving/issues"
+  },
+  "homepage": "https://github.com/karunsehwag/seam_carving#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  }
+}
+
