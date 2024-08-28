@@ -18,21 +18,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 # Set up the working directory
 WORKDIR /app
 
-# Copy the C++ source code and Node.js application files
+# Copy the source code and Node.js application files into the container
 COPY . .
 
-# Compile the C++ application
-RUN g++ seam_carving.cpp -o seam_carving `pkg-config --cflags --libs opencv4`
-
-# Install Node.js dependencies
-RUN npm install
-
-# Expose the port your Node.js app runs on
-EXPOSE 8080
-
-# Copy and set up the start script
-COPY start.sh /app/
+# Make sure the build script is executable
 RUN chmod +x /app/build.sh
 
-# Run the start script
+# Run the build script
 CMD ["/app/build.sh"]
