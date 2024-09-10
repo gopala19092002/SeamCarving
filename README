@@ -1,49 +1,51 @@
-Certainly! Here's how you can structure this as a README file:
-
----
 
 # Installation Guide
 
-Follow the steps below to set up your environment:
+This guide will help you set up your environment for the project.
 
-## Update and Install Dependencies
+## Prerequisites
 
-First, ensure your system's package list is up-to-date and install essential packages:
+Ensure you have the following before proceeding:
+
+- A Unix-like operating system (e.g., Ubuntu)
+- Sudo privileges
+
+## Steps to Install
+
+### 1. Update and Install Dependencies
+
+Update your package list and install essential packages:
 
 ```bash
 sudo apt-get update
 sudo apt-get install -y build-essential g++ cmake libopencv-dev curl sudo tzdata
 ```
 
-## Install Node.js
+### 2. Install Node.js
 
-Install Node.js version 18.x:
+Install Node.js version 18.x by running the following commands:
 
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-## Set Up the Working Directory
+### 3. Set Up the Working Directory
 
-Make sure to set up the working directory for your project.
+Ensure that you have the correct working directory for your project. This step may involve cloning a repository or creating necessary directories.
 
-## Make the Build Script Executable
+### 4. Make the Build Script Executable
 
-Change the permissions of the build script to make it executable:
+Change the permissions of the `build.sh` script to make it executable:
 
 ```bash
 chmod +x build.sh
 ```
 
-## Run the Build Script
+### 5. Run the Build Script
 
-Execute the build script to complete the setup:
+Execute the `build.sh` script to complete the setup:
 
 ```bash
 ./build.sh
 ```
-
----
-
-Feel free to adjust or expand this as needed for your specific project!
