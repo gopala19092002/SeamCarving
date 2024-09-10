@@ -27,17 +27,12 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Serve a basic form for the upload
+// Serve static files (CSS)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve HTML page for the upload form
 app.get('/', (req, res) => {
-    res.send(`
-        <h1>Seam Carving App</h1>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="image" required>
-            <input type="number" name="height" placeholder="Desired Height" required>
-            <input type="number" name="width" placeholder="Desired Width" required>
-            <input type="submit" value="Upload">
-        </form>
-    `);
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Handle the image upload and run the seam carving process

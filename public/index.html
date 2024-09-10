@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seam Carving App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Seam Carving App</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data" id="imageForm">
+            <div class="custom-file-input">
+                <span class="button">Choose File</span>
+                <input type="file" name="image" id="imageInput" accept="image/*" required>
+            </div>
+            <p id="dimensions">Upload an image to view its dimensions.</p>
+            <input type="number" name="height" id="inputHeight" placeholder="Desired Height" required>
+            <input type="number" name="width" id="inputWidth" placeholder="Desired Width" required>
+            <input type="submit" value="Upload">
+        </form>
+        <img id="uploadedImage" src="" alt="Your uploaded image will appear here">
+        <div id="status"></div>
+    </div>
+
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+                const img = new Image();
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    document.getElementById('uploadedImage').src = e.target.result;
+                }
+
+                img.onload = function() {
+                    const width = img.width;
+                    const height = img.height;
+
+                    document.getElementById('dimensions').innerText = `Original Image Dimensions - Width: ${width}px, Height: ${height}px`;
+
+                    // Set the max value for input fields based on original dimensions
+                    document.getElementById('inputHeight').max = height;
+                    document.getElementById('inputWidth').max = width;
+
+                    // Set placeholder to indicate the maximum possible values
+                    document.getElementById('inputHeight').placeholder = `Desired Height (Max: ${height})`;
+                    document.getElementById('inputWidth').placeholder = `Desired Width (Max: ${width})`;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Example function to update status
+        function updateStatus(message, isError = false) {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent = message;
+            statusElement.className = isError ? 'error' : '';
+        }
+
+        // Example usage
+        // updateStatus('Image uploaded successfully!');
+        // updateStatus('Error uploading image.', true);
+    </script>
+</body>
+</html>
+
