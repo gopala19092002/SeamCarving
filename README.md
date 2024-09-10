@@ -1,12 +1,16 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/testing
 ---
 
 # Installation Guide
 
-Follow the steps below to set up your environment:
+Follow these steps to set up your environment:
 
 ## Update and Install Dependencies
 
-First, ensure your system's package list is up-to-date and install essential packages:
+Start by updating your system's package list and installing essential packages:
 
 ```bash
 sudo apt-get update
@@ -24,11 +28,11 @@ sudo apt-get install -y nodejs
 
 ## Set Up the Working Directory
 
-Make sure to set up the working directory for your project.
+Create and navigate to the working directory for your project.
 
 ## Make the Build Script Executable
 
-Change the permissions of the build script to make it executable:
+Update the permissions of the build script to make it executable:
 
 ```bash
 chmod +x build.sh
@@ -42,4 +46,7 @@ Execute the build script to complete the setup:
 ./build.sh
 ```
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/testing
