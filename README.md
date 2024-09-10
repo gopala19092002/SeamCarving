@@ -1,5 +1,3 @@
-Certainly! Here's how you can structure this as a README file:
-
 ---
 
 # Installation Guide
@@ -43,7 +41,5 @@ Execute the build script to complete the setup:
 ```bash
 ./build.sh
 ```
-
 ---
 
-Feel free to adjust or expand this as needed for your specific project!
